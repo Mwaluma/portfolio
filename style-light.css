@@ -28,6 +28,11 @@ nav h1{
     font-size: 45px;
 }
 
+nav a{
+    text-decoration: none;
+    color: #000000;
+}
+
 nav h1 span{
     color: #0078D7; /* Changed from #1C9FDD to a slightly softer blue */
 }
