@@ -208,16 +208,27 @@ nav ul li a:hover::after{
     font-weight: 500;
     margin-bottom: 15px;
     color: #333333; /* Changed text color to dark gray */
-    /* border-radius: 50%; */
 }
 
 .services-list div a{
     text-decoration: none;
-    color: #0078D7; /* Changed from #fff to match the new theme */
+    /* color: #0078D7; Changed from #fff to match the new theme */
+    color: inherit;
+    transition: color 0.3s ease;
     font-size: 12px;
     margin-top: 20px;
     display: inline-block;
 }
+
+.services-list div:hover a {
+    color: white; /* Ensure the text remains visible on hover */
+    text-decoration: underline; /* Optional: Adds an underline for better visibility */
+  }
+
+  .services-list div:hover a:hover {
+    color: #ffcc00; /* Optional: Change color when hovering over the link itself */
+  }
+
 
 .services-list div:hover{
     background: #0078D7; /* Changed hover background to blue */
@@ -231,6 +242,7 @@ nav ul li a:hover::after{
 .services-list div:hover h2{
     color: #ffffff; /* Ensure headings are visible on hover */
 }
+
 
 /* Portfolio */
 #portfolio{
@@ -253,6 +265,7 @@ nav ul li a:hover::after{
 
 .work img{
     width: 100%;
+    height: 100%;
     display: block;
     transition: transform 0.5s;
 }
@@ -302,6 +315,7 @@ nav ul li a:hover::after{
     text-align: center;
     line-height: 60px;
 }
+
 
 .btn{
     display: block;
