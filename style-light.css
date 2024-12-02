@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     background: #ffffff; /* Changed from #080808 to white */
     color: #000000; /* Changed from #fff to dark gray for better readability */
@@ -14,7 +18,7 @@ body{
     width: 100%;
     height: 100vh;
     background-image: url(images/sketch.jpg);
-    background-position: right;
+    background-position: right center;
     background-repeat: no-repeat;
     background-size: 725px 725px; /* Keep the image dimensions */
     
@@ -176,6 +180,7 @@ nav ul li a:hover::after{
 /* Services */
 #services{
     color: #666666; /* Changed from #ababab to medium gray */
+    padding: 80px 0;
 }
 
 .services-list{
@@ -335,9 +340,15 @@ nav ul li a:hover::after{
 }
 
 /* Contact Details */
+#contact{
+    padding-top: 60px;
+    color: #666666; /* Changed from #ababab to medium gray */
+}
+
 .details-container{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .contact-details{
@@ -428,6 +439,12 @@ form .btn-contact{
     color: #0078D7; /* Changed from #ff004f to blue */
 }
 
+.text-area span{
+    color: #61b572;
+    display: block;
+    margin-top: -40px;
+}
+
 
 /* CSS for small screens */
 nav .fas{
@@ -436,7 +453,9 @@ nav .fas{
 
 @media only screen and (max-width: 600px){
     #header{
-        background-image: url(images/phone-background-light.png); /* Use a light-mode friendly image */
+        background-image: url(images/phone-sketch2.jpg);
+        background-position: right;
+        background-size: contain;        
     }
     .header-text{
         margin-top: 100%;
@@ -461,6 +480,7 @@ nav .fas{
         height: 100vh;
         padding-top: 50px;
         z-index: 2;
+        /* transition: right 0.5; */
     }
 
     nav ul li{
@@ -473,5 +493,33 @@ nav .fas{
         top: 25px;
         left: 25px;
         cursor: pointer;
+    }
+
+    /* About area */
+
+    .sub-title{
+       font-size: 40px;
+
+    }
+    
+    .about-col-1, .about-col-2{
+        flex-basis: 100%;
+    }
+
+    .about-col-2{
+        font-size: 14px;
+    }
+    
+    .tab-links{
+        margin-right: 20px;
+        font-size: 15px;
+    }
+    
+    .contact-details, .text-area{
+        flex-basis: 100%;
+    }
+
+    .copyright{
+        font-size: 14px;
     }
 }
