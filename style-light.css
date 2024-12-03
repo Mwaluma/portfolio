@@ -51,9 +51,6 @@ nav{
     justify-content: space-between;
 }
 
-.logo{
-    width: 140px;
-}
 
 nav ul li{
     display: inline-block;
@@ -455,7 +452,7 @@ nav .fas{
     #header{
         background-image: url(images/phone-sketch2.jpg);
         background-position: right;
-        background-size: contain;        
+        background-size: 350px 670px;        
     }
     .header-text{
         margin-top: 100%;
