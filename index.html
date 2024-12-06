@@ -91,20 +91,20 @@
                     <i class="fa-solid fa-code"></i>
                     <h2>Web Design</h2>
                     <p>I specialize in creating responsive, dynamic, and user-friendly websites. Leveraging modern frameworks like React.js and backend technologies such as Express.js, I deliver solutions tailored to client needs.</p>
-                    <a href="">Learn more</a>
+                    <a href="#contact">Learn more</a>
                 </div>
                 <div>
                     <i class="fa-solid fa-crop"></i>
                     <h2>UI/UX Design</h2>
                     <p>Designing intuitive interfaces and seamless user experiences is at the core of what I do. Using tools like Figma, I create designs that merge aesthetics with functionality.</p>
-                    <a href="">Learn more</a>
+                    <a href="#contact">Learn more</a>
 
                 </div>
                 <div>
                     <i class="fa-brands fa-app-store-ios"></i>
                     <h2>API Design</h2>
                     <p>Specializing in API development, I create robust APIs and seamlessly integrate them with third-party services or applications.</p>
-                    <a href="">Learn more</a>
+                    <a href="#contact">Learn more</a>
                 </div>
 
             </div>
@@ -145,7 +145,7 @@
                     </div>
                 </div>
             </div>
-            <a class="btn" href="">See More</a>
+            <!-- <a class="btn" href="">See More</a> -->
         </div>
       </div>
 
@@ -165,13 +165,13 @@
 
                 </div>
                 <div class="text-area">
-                    <form action="">
+                    <form action="" name="submit-to-google-sheet">
                         <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
                         <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                         <button class="btn btn-contact" type="submit">Submit</button>
                     </form>
-                    <span>Message has been sent successfully.</span>
+                    <span id="msg"></span>
 
                 </div>
             </div>
@@ -213,6 +213,25 @@
             menuDetails.style.right= "-200px";
         }
     </script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxVZ5-2oPVh25YW1wB5Gm_bGPz5OYq9wA3vfSzQlLgjxTnscc_8ul5dXVst0Rjgx_-C2Q/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg= document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML= "Message sent successfully."
+            setTimeout(() => {
+                msg.innerHTML= ""
+            }, 5000);
+            form.reset();
+        } )
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
 
 </body>
 </html>
